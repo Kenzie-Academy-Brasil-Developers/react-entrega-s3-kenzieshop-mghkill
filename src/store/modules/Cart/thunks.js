@@ -1,6 +1,9 @@
 import { addItemCard, removeItemCard } from "./actions";
 
-export const addCartThunk = (itemObj) => (dispatch) => {
+export const addCartThunk = (itemObj, count) => (dispatch) => {
+  itemObj.amout = count;
+  itemObj.price = itemObj.price * count;
+
   const getStorage = JSON.parse(localStorage.getItem("@Cart:products")) || [];
 
   const updateObj = [...getStorage, itemObj];

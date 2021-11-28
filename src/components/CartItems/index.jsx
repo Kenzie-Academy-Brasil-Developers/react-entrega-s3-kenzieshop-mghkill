@@ -10,12 +10,14 @@ const CartItems = () => {
   const handleRemoveItem = (item) => {
     dispatch(removeCartThunk(item));
   };
+  console.log(cart);
 
   return (
     <div className="CartStyles">
       {cart ? (
         cart.map((item, index) => (
           <div key={index}>
+            <div> Quantidade: {item.amout} </div>
             <Product
               item={item}
               handle={handleRemoveItem}

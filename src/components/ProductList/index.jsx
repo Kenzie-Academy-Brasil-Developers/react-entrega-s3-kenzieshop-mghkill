@@ -1,8 +1,12 @@
 import Product from "../Product";
 import { addCartThunk } from "../../store/modules/Cart/thunks";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+import "./styles.css";
 
 const ProductList = () => {
+  const [amount, setAmount] = useState(1);
+
   const products = [
     {
       id: 1,
@@ -93,19 +97,34 @@ const ProductList = () => {
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
-    dispatch(addCartThunk(item));
+    if (amount < 1) {
+      console.log("Valor mínimo, 1 unidade");
+    } else {
+      dispatch(addCartThunk(item, Number(amount)));
+      setAmount(1);
+    }
   };
 
   return (
     <div>
       {products.map((item) => {
         return (
-          <Product
-            key={item.id}
-            item={item}
-            handle={handleAddItem}
-            children={"Adicionar ao carrinho"}
-          />
+          <div key={item.id} className="conteiner-list">
+            <input
+              className="input-list"
+              placeholder="Quantidade"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              type="number"
+            />
+            <Product
+              item={item}
+              handle={handleAddItem}
+              children={"Adicionar ao carrinho"}
+              amount={amount}
+              setAmount={setAmount}
+            />
+          </div>
         );
       })}
     </div>

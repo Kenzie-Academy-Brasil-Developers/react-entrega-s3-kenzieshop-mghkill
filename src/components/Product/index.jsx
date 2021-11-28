@@ -1,11 +1,17 @@
+import "./styles.css";
 const Product = ({ item, handle, children }) => {
   const { image, name, price } = item;
 
   return (
-    <div>
+    <div className="conteiner">
       <img src={image} alt={name} />
-      <h2>{name}</h2>
-      <span>{price}</span>
+
+      <h4>Nome: {name}</h4>
+
+      <p>
+        Total: R$ <span>{price}</span>
+      </p>
+
       <button onClick={() => handle(item)}>{children}</button>
     </div>
   );

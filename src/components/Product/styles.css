@@ -1,0 +1,41 @@
+.conteiner {
+  background-image: linear-gradient(to bottom, #333232, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 24px;
+  color: #d7d7d7;
+  border: solid 1px #555;
+}
+
+.conteiner h4 {
+  font-size: medium;
+  margin: 0 auto;
+}
+.conteiner p {
+  font-size: small;
+}
+.conteiner p span {
+  font-size: large;
+}
+
+.conteiner button {
+  background-color: #2d1fc8;
+  height: 40px;
+  width: 70%;
+  margin: 22px auto;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.conteiner button:hover {
+  background-color: white;
+  color: #2d1fc8;
+}
+.conteiner img {
+  margin: 0 auto;
+  height: 100%;
+  border-radius: 12px;
+}
