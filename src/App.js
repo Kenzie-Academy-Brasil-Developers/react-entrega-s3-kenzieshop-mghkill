@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useSelector } from "react-redux";
 import { FiShoppingCart } from "react-icons/fi";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const cart = useSelector((store) => store.cart);
@@ -17,6 +18,17 @@ function App() {
   return (
     <div className="App">
       <div className="App-box">
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <div className="App-conteiner">
           <header className="App-cart">
             <Button onClick={handleOpen}>

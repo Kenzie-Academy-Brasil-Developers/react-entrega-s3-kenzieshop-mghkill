@@ -12,20 +12,23 @@
 .conteiner h4 {
   font-size: medium;
   margin: 0 auto;
+  color: white;
 }
 .conteiner p {
   font-size: small;
+  color: #57c5f9;
 }
 .conteiner p span {
   font-size: large;
+  color: #57c5f9;
 }
 
 .conteiner button {
   background-image: linear-gradient(
     to right,
-    #ff6e7f 0%,
-    #bfe9ff 51%,
-    #ff6e7f 100%
+    #57c5f9 0%,
+    #9f65e1 51%,
+    #6760ea 100%
   );
 
   text-align: center;
@@ -33,7 +36,7 @@
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 20px #57c5f9;
   border-radius: 10px;
   height: 40px;
   width: 70%;
@@ -52,6 +55,4 @@
   height: 100%;
   width: 100%;
   border-radius: 12px;
-}
-@media (min-width: 600px) {
 }

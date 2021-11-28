@@ -3,7 +3,8 @@ import { addCartThunk } from "../../store/modules/Cart/thunks";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import "./styles.css";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ProductList = () => {
   const [amount, setAmount] = useState(1);
 
@@ -102,6 +103,15 @@ const ProductList = () => {
     } else {
       dispatch(addCartThunk(item, Number(amount)));
       setAmount(1);
+      toast.success("Item adicionado ao carrinho!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
