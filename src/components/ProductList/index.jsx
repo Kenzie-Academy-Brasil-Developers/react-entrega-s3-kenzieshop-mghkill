@@ -120,7 +120,7 @@ const ProductList = () => {
             <Product
               item={item}
               handle={handleAddItem}
-              children={"Adicionar ao carrinho"}
+              children={"Adicionar"}
               amount={amount}
               setAmount={setAmount}
             />

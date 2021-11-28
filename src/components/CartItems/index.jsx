@@ -10,25 +10,16 @@ const CartItems = () => {
   const handleRemoveItem = (item) => {
     dispatch(removeCartThunk(item));
   };
-  console.log(cart);
 
   return (
-    <div className="CartStyles">
-      {cart ? (
-        cart.map((item, index) => (
-          <div key={index}>
-            <div> Quantidade: {item.amout} </div>
-            <Product
-              item={item}
-              handle={handleRemoveItem}
-              children={"Remover"}
-            />
-          </div>
-        ))
-      ) : (
-        <h1>Carrinho está vazio</h1>
-      )}
-    </div>
+    <>
+      {cart.map((item, index) => (
+        <div className="cart-list" key={index}>
+          <div className="amount"> Quantidade: {item.amout} </div>
+          <Product item={item} handle={handleRemoveItem} children={"Remover"} />
+        </div>
+      ))}
+    </>
   );
 };
 export default CartItems;

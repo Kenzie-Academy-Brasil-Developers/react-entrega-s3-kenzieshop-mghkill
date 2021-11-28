@@ -21,21 +21,37 @@
 }
 
 .conteiner button {
-  background-color: #2d1fc8;
+  background-image: linear-gradient(
+    to right,
+    #ff6e7f 0%,
+    #bfe9ff 51%,
+    #ff6e7f 100%
+  );
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
   height: 40px;
   width: 70%;
   margin: 22px auto;
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  color: white;
 }
 .conteiner button:hover {
-  background-color: white;
-  color: #2d1fc8;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 .conteiner img {
-  margin: 0 auto;
+  margin: 28px auto;
   height: 100%;
+  width: 100%;
   border-radius: 12px;
+}
+@media (min-width: 600px) {
 }

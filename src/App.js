@@ -6,16 +6,25 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { useSelector } from "react-redux";
+import { FiShoppingCart } from "react-icons/fi";
 
 function App() {
+  const cart = useSelector((store) => store.cart);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-box">
         <div className="App-conteiner">
-          <Button onClick={handleOpen}>Open modal</Button>
+          <header className="App-cart">
+            <Button onClick={handleOpen}>
+              <div>{cart.length}</div>
+              <FiShoppingCart />
+            </Button>
+          </header>
+
           <ProductList />
 
           <Modal
@@ -25,16 +34,20 @@ function App() {
             aria-describedby="modal-modal-description"
           >
             <Box className="modal">
-              <Typography className="modal-left" id="modal-modal-title">
-                <CartItems />
-              </Typography>
               <Typography className="modal-right" id="modal-modal-description">
-                teste
+                CHECKOUT
+              </Typography>
+              <Typography className="modal-left" id="modal-modal-title">
+                {cart.length !== 0 ? (
+                  <CartItems />
+                ) : (
+                  <h1>Carrinho está vazio</h1>
+                )}
               </Typography>
             </Box>
           </Modal>
         </div>
-      </header>
+      </div>
     </div>
   );
 }

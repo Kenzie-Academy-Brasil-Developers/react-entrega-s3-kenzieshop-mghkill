@@ -1,3 +1,4 @@
+import format from "../../utils";
 import "./styles.css";
 const Product = ({ item, handle, children }) => {
   const { image, name, price } = item;
@@ -9,7 +10,7 @@ const Product = ({ item, handle, children }) => {
       <h4>Nome: {name}</h4>
 
       <p>
-        Total: R$ <span>{price}</span>
+        Total: <span>{format(price)}</span>
       </p>
 
       <button onClick={() => handle(item)}>{children}</button>
